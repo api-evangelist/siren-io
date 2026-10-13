@@ -1,23 +1,103 @@
 aid: siren-io
 name: Siren
-description: 'Siren is a company surfaced via the API Evangelist harvest backlog (source: market-gap:search-api)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Siren (Siren Solutions, siren.io) builds the Siren Platform for investigative intelligence: Siren Investigate, an Elasticsearch/OpenSearch-based investigation, link-analysis and search application used by law enforcement, intelligence, cyber and financial-crime teams. Siren Investigate exposes documented REST APIs (Status, Health, Query Generator, Dashboard, Search, Object Definitions, Reconciliation, Refresh Fields) plus a JavaScript scripting API, served from each customer''s own self-hosted Siren Investigate instance.'
 url: https://raw.githubusercontent.com/api-evangelist/siren-io/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:market-gap:search-api
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-14 (local-v5; was harvest)
 specificationVersion: '0.20'
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-14'
 tags:
 - Company
-apis: []
+- Investigative Intelligence
+- Search
+- Link Analysis
+- Elasticsearch
+- Data Analytics
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+image: https://siren.io/wp-content/uploads/img-siren-logo-power-investigations-hq-2400x1260-1.jpg
 common:
+- type: Spectral
+  url: rules/siren-io-rules.yml
+- type: JSONLD
+  url: json-ld/siren-io-context.jsonld
+- type: Vocabulary
+  url: vocabulary/siren-io-vocabulary.yml
+- type: DataModel
+  url: data-model/siren-io-data-model.yml
+- type: Conformance
+  url: conformance/siren-io-conformance.yml
+- type: LLMsTxt
+  url: llms/siren-io-llms.txt
+- type: Hosts
+  url: hosts/siren-io-hosts.yml
+- type: Newsroom
+  url: https://siren.io/newsroom/
+- type: DomainSecurity
+  url: security/siren-io-domain-security.yml
 - type: Website
   url: https://siren.io
+- type: Documentation
+  url: https://docs.siren.io
+- type: APIReference
+  url: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+- type: GettingStarted
+  url: https://siren.io/getting-started/
+- type: Blog
+  url: https://siren.io/blog/
+- type: GitHubOrganization
+  url: https://github.com/sirensolutions
+- type: Support
+  url: https://support.siren.io
+- type: PrivacyPolicy
+  url: https://siren.io/legal/privacy-policy/
+- type: Contact
+  url: https://siren.io/contact/
+apis:
+- aid: siren-io:siren-investigate-rest-api
+  name: Siren Investigate REST API
+  description: REST APIs of a self-hosted Siren Investigate instance (status, health, query generation, dashboards, search, object definitions, reconciliation, field refresh), documented in the Siren Platform user guide. The base URL is the customer's own Investigate host.
+  humanURL: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+  baseURL: https://{siren-investigate-host}
+  tags:
+  - Search
+  - Investigative Intelligence
+  - Dashboards
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/siren-io-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-response-schema.json
+  - type: Documentation
+    url: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+  image: https://siren.io/wp-content/uploads/img-siren-logo-power-investigations-hq-2400x1260-1.jpg
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-14'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://info.siren.io/mcp
+    status: 403
+  - url: https://siren.io
+    status: 200
+x-enrichment:
+  date: '2026-10-14'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v5

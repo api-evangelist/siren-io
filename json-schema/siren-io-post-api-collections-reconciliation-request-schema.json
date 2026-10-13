@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/siren-io/main/json-schema/siren-io-post-api-collections-reconciliation-request-schema.json",
+  "title": "PostApiCollectionsReconciliationRequest",
+  "x-generated": "2026-10-14",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/siren-io-openapi-generated.yml#/components/schemas/PostApiCollectionsReconciliationRequest",
+  "type": "object",
+  "properties": {
+    "indexPatterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

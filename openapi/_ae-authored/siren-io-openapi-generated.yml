@@ -1,0 +1,307 @@
+openapi: 3.1.0
+info:
+  title: Siren Investigate REST API
+  version: '2026-10-14'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-14, then hand-corrected: 9 operation(s) read from the Siren Investigate REST API pages of docs.siren.io (each operation names its page in x-source). Operations the generator lifted from third-party examples (OpenWeatherMap, Elasticsearch, Search Guard) were removed. This is not the provider''s published contract; Siren has published no machine-readable contract that the pipeline could find.'
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-14'
+  x-generator: generate-contract-from-docs.py
+  x-engine: anthropic
+  x-sources:
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_search-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_dashboard-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_reconciliation-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_refresh-fields-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/reconciliation.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/t_edit-entity-tables.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/t_jwt-config.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_status-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_health-api.html
+servers:
+- url: https://{siren-investigate-host}
+  description: Customer self-hosted Siren Investigate instance
+  variables:
+    siren-investigate-host:
+      default: localhost:5606
+paths:
+  /api/collections/reconciliation:
+    post:
+      operationId: post_api_collections_reconciliation
+      tags:
+      - Api
+      summary: POST /api/collections/reconciliation
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_reconciliation-api.html
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiCollectionsReconciliationRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiCollectionsReconciliationResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -H \"Content-Type: application/json\" -H 'kbn-xsrf: any' -u sirenadmin:password -L -XPOST 'http://localhost:5606/api/collections/reconciliation' -d '{ \"indexPatterns\": [\"company\"] }' \n A request to reconcile document references belonging to the entity table with an ID of search:9b412ba0-533c-411e-b431-532db5d05260 : "
+  /api/entity_tables/refresh_fields:
+    post:
+      operationId: post_api_entity_tables_refresh_fields
+      tags:
+      - Api
+      summary: POST /api/entity_tables/refresh_fields
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_refresh-fields-api.html
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiEntityTablesRefreshFieldsRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiEntityTablesRefreshFieldsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -H \"Content-Type: application/json\" -H 'kbn-xsrf: any' -u sirenadmin:password -L -XPOST 'http://localhost:5606/api/entity_tables/refresh_fields' -d '{ \"entityTableIds\": [\"search:9b412ba0-533c-411e-b431-532db5d05260\"] }' \n The same request as above, but refreshing fields for that entity table across all cloned dataspaces: "
+  /api/operations/{operationid}/cancel:
+    post:
+      operationId: post_api_operations_operationid_cancel
+      tags:
+      - Api
+      summary: Cancel the operation represented by operationId.
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_refresh-fields-api.html
+      parameters:
+      - name: operationid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/generate-query/dashboard:
+    get:
+      operationId: getGenerateQueryDashboard
+      tags:
+      - Api
+      summary: Returns a list of saved dashboards in the system.
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_dashboard-api.html
+      parameters:
+      - name: id
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Fetches the dashboard that has the specified ID
+      responses:
+        '200':
+          description: A list of saved dashboards (or one, when id is given).
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+      x-evidence:
+        kind: documentation
+  /api/generate-query/search:
+    get:
+      operationId: getGenerateQuerySearch
+      tags:
+      - Api
+      summary: Returns a list of entity tables and searches in the system.
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_search-api.html
+      parameters:
+      - name: id
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Fetches the search that has the specified ID
+      responses:
+        '200':
+          description: A list of saved dashboards (or one, when id is given).
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+      x-evidence:
+        kind: documentation
+  /api/status:
+    get:
+      operationId: getStatus
+      summary: Monitor the Siren Investigate application status.
+      tags:
+      - Api
+      parameters: &id001
+      - name: pretty
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Application is working
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_status-api.html
+      x-evidence:
+        kind: documentation
+  /api/health:
+    get:
+      operationId: getHealth
+      summary: Monitor the health of the application process and operating system.
+      tags:
+      - Api
+      parameters: *id001
+      responses:
+        '200':
+          description: Application process is running
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_health-api.html
+      x-evidence:
+        kind: documentation
+  /api/operations/{operationid}/status:
+    get:
+      operationId: getOperationStatus
+      tags:
+      - Api
+      summary: Get the status of a long-running operation.
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_reconciliation-api.html
+      parameters:
+      - name: operationid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiOperationsOperationidIdResponse'
+      x-evidence:
+        kind: documentation
+        note: path read as /api/operations/<uuid>/status in the page example
+  /api/operations/{operationid}/stream:
+    get:
+      operationId: getOperationStream
+      tags:
+      - Api
+      summary: Get the stream of a long-running operation.
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_reconciliation-api.html
+      parameters:
+      - name: operationid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiOperationsOperationidIdResponse'
+      x-evidence:
+        kind: documentation
+        note: path read as /api/operations/<uuid>/stream in the page example
+components:
+  schemas:
+    GetClusterSettingsResponse:
+      type: object
+      properties:
+        persistent:
+          type: object
+          properties:
+            cluster.routing.allocation.enable:
+              type: string
+    PostApiCollectionsReconciliationRequest:
+      type: object
+      properties:
+        indexPatterns:
+          type: array
+          items:
+            type: string
+    PostApiCollectionsReconciliationResponse:
+      type: object
+      properties:
+        operationId:
+          type: string
+    PostApiEntityTablesRefreshFieldsRequest:
+      type: object
+      properties:
+        entityTableIds:
+          type: array
+          items:
+            type: string
+    PostApiEntityTablesRefreshFieldsResponse:
+      type: object
+      properties:
+        operationId:
+          type: string
+    GetApiGenerateQueryGeneratequeryidResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        id:
+          type: string
+          description: dashboard ID
+        index:
+          type: array
+          description: list of real index names
+        title:
+          type: string
+          description: dashboard title
+        description:
+          type: string
+          description: dashboard description
+        columns:
+          type: array
+          description: list of columns that are associated with the search
+        queries:
+          type: array
+          description: list that contains queries that are used to build the final query
+        filters:
+          type: array
+          description: list that contains filter objects that are associated with the dashboard
+        query:
+          type: object
+          description: final query
+        queryWithoutTimeRange:
+          type: object
+          description: final query without time range
+        dataModel:
+          type: object
+          description: dashboard data model
+        timeMode:
+          type: string
+          description: time mode that is specified in the index pattern
+    GetApiOperationsOperationidIdResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          description: 'Current status of the operation: ''running'', ''done'', or ''error'''
+        data:
+          type: object
+          description: 'The data object associated with the current status: ProgressData, ReconciliationResult, or ErrorData'
+tags:
+- name: Api
+- name: Cluster
+- name: Data
+- name: Searchguard

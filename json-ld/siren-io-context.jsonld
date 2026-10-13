@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "@vocab": "https://siren.io/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "siren": "https://siren.io/schema#",
+    "GetClusterSettingsResponse": "siren:GetClusterSettingsResponse",
+    "persistent": {
+      "@id": "siren:persistent"
+    },
+    "PostApiCollectionsReconciliationRequest": "siren:PostApiCollectionsReconciliationRequest",
+    "indexPatterns": {
+      "@id": "siren:indexPatterns",
+      "@container": "@list"
+    },
+    "PostApiCollectionsReconciliationResponse": "siren:PostApiCollectionsReconciliationResponse",
+    "operationId": {
+      "@id": "siren:operationId",
+      "@type": "xsd:string"
+    },
+    "PostApiEntityTablesRefreshFieldsRequest": "siren:PostApiEntityTablesRefreshFieldsRequest",
+    "entityTableIds": {
+      "@id": "siren:entityTableIds",
+      "@container": "@list"
+    },
+    "PostApiEntityTablesRefreshFieldsResponse": "siren:PostApiEntityTablesRefreshFieldsResponse",
+    "GetApiGenerateQueryGeneratequeryidResponse": "siren:GetApiGenerateQueryGeneratequeryidResponse",
+    "type": {
+      "@id": "siren:type",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "siren:id",
+      "@type": "xsd:string"
+    },
+    "index": {
+      "@id": "siren:index",
+      "@container": "@list"
+    },
+    "title": {
+      "@id": "siren:title",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "siren:description",
+      "@type": "xsd:string"
+    },
+    "columns": {
+      "@id": "siren:columns",
+      "@container": "@list"
+    },
+    "queries": {
+      "@id": "siren:queries",
+      "@container": "@list"
+    },
+    "filters": {
+      "@id": "siren:filters",
+      "@container": "@list"
+    },
+    "query": {
+      "@id": "siren:query"
+    },
+    "queryWithoutTimeRange": {
+      "@id": "siren:queryWithoutTimeRange"
+    },
+    "dataModel": {
+      "@id": "siren:dataModel"
+    },
+    "timeMode": {
+      "@id": "siren:timeMode",
+      "@type": "xsd:string"
+    },
+    "GetApiOperationsOperationidIdResponse": "siren:GetApiOperationsOperationidIdResponse",
+    "status": {
+      "@id": "siren:status",
+      "@type": "xsd:string"
+    },
+    "data": {
+      "@id": "siren:data"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Siren API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Siren's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-14) from openapi/_ae-authored/siren-io-openapi-generated.yml.",
+  "dcterms:created": "2026-10-14",
+  "dcterms:source": [
+    "openapi/_ae-authored/siren-io-openapi-generated.yml"
+  ]
+}
