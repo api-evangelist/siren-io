@@ -1,0 +1,80 @@
+openapi: 3.2.0
+info:
+  title: Siren Investigate REST Generate Query API
+  version: '2026-10-14'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-14, then hand-corrected: 9 operation(s) read from the Siren Investigate REST API pages of docs.siren.io (each operation names its page in x-source). Operations the generator lifted from third-party examples (OpenWeatherMap, Elasticsearch, Search Guard) were removed. This is not the provider''s published contract; Siren has published no machine-readable contract that the pipeline could find.'
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-14'
+  x-generator: generate-contract-from-docs.py
+  x-engine: anthropic
+  x-sources:
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_search-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_dashboard-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_reconciliation-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_refresh-fields-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/reconciliation.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/t_edit-entity-tables.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/t_jwt-config.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_status-api.html
+  - https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_health-api.html
+servers:
+- url: https://{siren-investigate-host}
+  description: Customer self-hosted Siren Investigate instance
+  variables:
+    siren-investigate-host:
+      default: localhost:5606
+tags:
+- name: Generate Query
+paths:
+  /api/generate-query/dashboard:
+    get:
+      operationId: getGenerateQueryDashboard
+      tags:
+      - Generate Query
+      summary: Returns a list of saved dashboards in the system
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_dashboard-api.html
+      parameters:
+      - name: id
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Fetches the dashboard that has the specified ID
+      responses:
+        '200':
+          description: A list of saved dashboards (or one, when id is given).
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+      x-evidence:
+        kind: documentation
+  /api/generate-query/search:
+    get:
+      operationId: getGenerateQuerySearch
+      tags:
+      - Generate Query
+      summary: Returns a list of entity tables and searches in the system
+      x-source: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_search-api.html
+      parameters:
+      - name: id
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Fetches the search that has the specified ID
+      responses:
+        '200':
+          description: A list of saved dashboards (or one, when id is given).
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+      x-evidence:
+        kind: documentation

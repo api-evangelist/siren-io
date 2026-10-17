@@ -1,0 +1,38 @@
+{
+  "provider": "siren-io",
+  "sources": [
+    "_ae-authored/siren-io-openapi-generated.yml"
+  ],
+  "outputs": [
+    "siren-io-collections-api-openapi.yml",
+    "siren-io-entity-tables-api-openapi.yml",
+    "siren-io-generate-query-api-openapi.yml",
+    "siren-io-health-api-openapi.yml",
+    "siren-io-operations-api-openapi.yml",
+    "siren-io-status-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "siren-io-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "siren-io-openapi-generated.yml: tagged paths POST /api/collections/reconciliation -> Collections",
+    "siren-io-openapi-generated.yml: tagged paths POST /api/entity_tables/refresh_fields -> Entity Tables",
+    "siren-io-openapi-generated.yml: tagged paths POST /api/operations/{operationid}/cancel -> Operations",
+    "siren-io-openapi-generated.yml: tagged paths GET /api/generate-query/dashboard -> Generate Query",
+    "siren-io-openapi-generated.yml: tagged paths GET /api/generate-query/search -> Generate Query",
+    "siren-io-openapi-generated.yml: tagged paths GET /api/status -> Status",
+    "siren-io-openapi-generated.yml: tagged paths GET /api/health -> Health",
+    "siren-io-openapi-generated.yml: tagged paths GET /api/operations/{operationid}/status -> Operations",
+    "siren-io-openapi-generated.yml: tagged paths GET /api/operations/{operationid}/stream -> Operations",
+    "siren-io-openapi-generated.yml: declared missing tag: Collections",
+    "siren-io-openapi-generated.yml: declared missing tag: Entity Tables",
+    "siren-io-openapi-generated.yml: declared missing tag: Generate Query",
+    "siren-io-openapi-generated.yml: declared missing tag: Health",
+    "siren-io-openapi-generated.yml: declared missing tag: Operations",
+    "siren-io-openapi-generated.yml: declared missing tag: Status",
+    "apis.yml register: written (+6 apis, 6 total)"
+  ],
+  "skipped": []
+}

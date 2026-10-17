@@ -60,19 +60,16 @@ common:
 - type: Contact
   url: https://siren.io/contact/
 apis:
-- aid: siren-io:siren-investigate-rest-api
-  name: Siren Investigate REST API
-  description: REST APIs of a self-hosted Siren Investigate instance (status, health, query generation, dashboards, search, object definitions, reconciliation, field refresh), documented in the Siren Platform user guide. The base URL is the customer's own Investigate host.
+- aid: siren-io:siren-io-collections-api
+  name: Siren Collections API
+  description: The Collections API from Siren — 1 operation(s) for collections.
   humanURL: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
   baseURL: https://{siren-investigate-host}
   tags:
-  - Search
-  - Investigative Intelligence
-  - Dashboards
+  - Collections
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/siren-io-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/siren-io-collections-api-openapi.yml
   - type: JSONSchema
     url: json-schema/siren-io-post-api-entity-tables-refresh-fields-request-schema.json
   - type: JSONSchema
@@ -83,7 +80,106 @@ apis:
     url: json-schema/siren-io-post-api-entity-tables-refresh-fields-response-schema.json
   - type: Documentation
     url: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
-  image: https://siren.io/wp-content/uploads/img-siren-logo-power-investigations-hq-2400x1260-1.jpg
+- aid: siren-io:siren-io-entity-tables-api
+  name: Siren Entity Tables API
+  description: The Entity Tables API from Siren — 1 operation(s) for entity tables.
+  humanURL: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+  baseURL: https://{siren-investigate-host}
+  tags:
+  - Entity Tables
+  properties:
+  - type: OpenAPI
+    url: openapi/siren-io-entity-tables-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-response-schema.json
+  - type: Documentation
+    url: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+- aid: siren-io:siren-io-generate-query-api
+  name: Siren Generate Query API
+  description: The Generate Query API from Siren — 2 operation(s) for generate query.
+  humanURL: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+  baseURL: https://{siren-investigate-host}
+  tags:
+  - Generate Query
+  properties:
+  - type: OpenAPI
+    url: openapi/siren-io-generate-query-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-response-schema.json
+  - type: Documentation
+    url: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+- aid: siren-io:siren-io-health-api
+  name: Siren Health API
+  description: The Health API from Siren — 1 operation(s) for health.
+  humanURL: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+  baseURL: https://{siren-investigate-host}
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/siren-io-health-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-response-schema.json
+  - type: Documentation
+    url: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+- aid: siren-io:siren-io-operations-api
+  name: Siren Operations API
+  description: The Operations API from Siren — 3 operation(s) for operations.
+  humanURL: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+  baseURL: https://{siren-investigate-host}
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/siren-io-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-response-schema.json
+  - type: Documentation
+    url: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+- aid: siren-io:siren-io-status-api
+  name: Siren Status API
+  description: The Status API from Siren — 1 operation(s) for status.
+  humanURL: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
+  baseURL: https://{siren-investigate-host}
+  tags:
+  - Status
+  properties:
+  - type: OpenAPI
+    url: openapi/siren-io-status-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-request-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-collections-reconciliation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/siren-io-post-api-entity-tables-refresh-fields-response-schema.json
+  - type: Documentation
+    url: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
 x-coverage:
   state: none
   reason: no-developer-program
