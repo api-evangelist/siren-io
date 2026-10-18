@@ -66,6 +66,8 @@ apis:
   humanURL: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
   baseURL: https://{siren-investigate-host}
   tags:
+  - Collection
+  tags_raw:
   - Collections
   properties:
   - type: OpenAPI
@@ -145,7 +147,8 @@ apis:
   description: The Operations API from Siren — 3 operation(s) for operations.
   humanURL: https://docs.siren.io/siren-platform-user-guide/16.0/siren-investigate/c_rest-apis.html
   baseURL: https://{siren-investigate-host}
-  tags:
+  tags: []
+  tags_raw:
   - Operations
   properties:
   - type: OpenAPI
